@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Kusaco | gallery</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'kusaco/css/home.css' %}"  />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{% static 'kusaco/img/logo.jpg' %}"> KUSACO <span></span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'testimonials' %}">testimonials</a></li>
+					<li><a href="{% url 'articles' %}">Articles</a></li>
+					<li><a href="{% url 'gallery' %}">Gallery</a></li>
+					<li><a href="{% url 'about' %}">About Us</a></li>
+					<li><a href="{% url 'events' %}">News & Events</a></li>
+					<li><a href="{% url 'registration' %}">Registration</a></li>
+
+
+
+				</ul>
+			</nav>
+<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p> Talking photos</p>
+						<h2>Gallery</h2>
+					</header>
+				</div>
+			</section>
+
+<!-- Image -->
+								<h3></h3>
+
+								<h4></h4>
+								<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
+								<div class="box alt">
+									<div class="row 50% uniform">
+										<div class="4u"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<div class="4u$"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<!-- Break -->
+										<div class="4u"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<div class="4u$"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<!-- Break -->
+										<div class="4u"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<div class="4u"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+										<div class="4u$"><span class="image fit"><img src="{% static 'kusaco/img/photo1.jpg' %}" alt="" /></span></div>
+									</div>
+								</div>
+
+<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				Contact us on: +254717614453 | +25419366819 | +254718046786<br>kusacofamily@gmail.com
+				<div class="copyright">
+					&copy; Developed by Mudaki Wilson <br> enlightguru@gmail.com<br>+254700868636
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'kusaco/js/jquery.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/skel.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/util.js' %}"></script>
+			<script src="{% static 'kusaco/js/main.js' %}"></script>
+
+	</body>
+</html>

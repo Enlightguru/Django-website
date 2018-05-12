@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Kusaco | registration</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'kusaco/css/home.css' %}"  />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{% static 'kusaco/img/logo.jpg' %}"> KUSACO <span></span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'testimonials' %}">testimonials</a></li>
+					<li><a href="{% url 'articles' %}">Articles</a></li>
+					<li><a href="{% url 'gallery' %}">Gallery</a></li>
+					<li><a href="{% url 'about' %}">About Us</a></li>
+					<li><a href="{% url 'events' %}">News & Events</a></li>
+
+
+				</ul>
+			</nav>
+<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p> Join Us in Healing The World</p>
+						<h2>Registration</h2>
+					</header>
+				</div>
+			</section>
+
+
+
+			
+								<p><span class="image left"><img src="{% static 'kusaco/img/logo.jpeg' %}" alt="" /></span>
+									Please register below to become a bonafide Member of KUSACO.<br>N/B. Ensure that you enter a valid email address and check your email within 24hrs. A link will be sent to you, click on the link to join the KUSACO Family WhatsApp Group.
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        <!-- {% if field.help_text %} -->
+          <!-- <small style="color: grey">{{ field.help_text }}</small> -->
+        <!-- {% endif %}--> 
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Register</button>
+  </form></p>
+								<p><span class="image right"><img src="{% static 'kusaco/img/photo2.jpeg' %}" alt="" /></span>
+							<!-- Box -->
+								<h3></h3>
+								<div class="box">
+									
+								</div>
+							</body>
+
+								<section id="three" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">Pictorials</p>
+						<h2>Get the facts</h2>
+					</header>
+					<div class="gallery">
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/sleep.jpg' %}" alt="" /></a>
+							</div>
+							<p></p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/cd.jpg' %}" alt="" /></a>
+							</div>
+							<p>Backup the rubber with the pill</p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/fct.jpg' %}" alt="" /></a>
+							</div>
+							<p></p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/treat.jpg' %}" alt="" /></a>
+							</div>
+							<p></p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/bn.jpg' %}" alt="" /></a>
+							</div>
+							<p> </p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/bot.jpg' %}" alt="" /></a>
+							</div>
+							<p> </p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				Contact us on: +254717614453 | +25419366819 | +254718046786<br>kusacofamily@gmail.com
+				<div class="copyright">
+					&copy; Developed by Mudaki Wilson <br> enlightguru@gmail.com<br>+254700868636
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'kusaco/js/jquery.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/skel.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/util.js' %}"></script>
+			<script src="{% static 'kusaco/js/main.js' %}"></script>
+
+	</body>
+</html>

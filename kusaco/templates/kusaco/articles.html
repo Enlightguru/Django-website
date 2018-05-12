@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Kusaco | articles</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'kusaco/css/home.css' %}" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{% static 'kusaco/img/logo.jpg' %}">KUSACO<span></span></a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'testimonials' %}">testimonials</a></li>
+					<li><a href="{% url 'articles' %}">Articles</a></li>
+					<li><a href="{% url 'gallery' %}">Gallery</a></li>
+					<li><a href="{% url 'about' %}">About Us</a></li>
+					<li><a href="{% url 'events' %}">News & Events</a></li>
+					<li><a href="{% url 'registration' %}">Registration</a></li>
+
+
+
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<p>Enlightening wordings</p>
+						<h2>Articles</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								 {% for a in art %}
+								<p>Category:  {{ a.genre }}</p>
+								<h2>{{ a.title }}</h2>
+							</header>
+						
+<h5>Published by: {{ a.written_by }}</h5>
+<h5>Published On: {{ a.date_added }}</h5>
+
+
+<p>{{ a.article }}</p>
+{% if art.has_other_pages %}
+  <ul class="pagination">
+    {% if art.has_previous %}
+      <li><a href="?page={{ art.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&laquo;</span></li>
+    {% endif %}
+    {% for a in art.paginator.page_range %}
+      {% if art.number == a %}
+        <li class="active"><span>{{ a }} <span class="sr-only">(current)</span></span></li>
+      {% else %}
+        <li><a href="?page={{ a }}">{{ a }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if art.has_next %}
+      <li><a href="?page={{ art.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class="disabled"><span>&raquo;</span></li>
+    {% endif %}
+</ul>
+{% endif %}
+{% endfor %}
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				Contact us on: +254717614453 | +25419366819 | +254718046786<br>kusacofamily@gmail.com
+				<div class="copyright">
+					&copy; Developed by Mudaki Wilson <br> enlightguru@gmail.com<br>+254700868636
+				</div>
+			</footer>
+		<!-- Scripts -->
+			<script src="{% static 'kusaco/js/jquery.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/skel.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/util.js' %}"></script>
+			<script src="{% static 'kusaco/js/main.js' %}"></script>
+
+	</body>
+</html>

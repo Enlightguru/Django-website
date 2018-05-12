@@ -1,0 +1,227 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Kusaco | home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'kusaco/css/home.css' %}" />
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="{% static 'kusaco/img/logo.jpg' %}">KUSACO<span></span></a></div>
+				<a href="#menu">Menu</a>
+				
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'home' %}">Home</a></li>
+					<li><a href="{% url 'testimonials' %}">testimonials</a></li>
+					<li><a href="{% url 'articles' %}">Articles</a></li>
+					<li><a href="{% url 'gallery' %}">Gallery</a></li>
+					<li><a href="{% url 'about' %}">About Us</a></li>
+					<li><a href="{% url 'events' %}">News & Events</a></li>
+					<li><a href="{% url 'registration' %}">Registration</a></li>
+
+
+
+				</ul>
+			</nav>
+
+		<!-- Banner -->
+			<section class="banner full">
+				<article>
+					<img src="{% static 'kusaco/img/cmd.jpg' %}" alt="My image" />
+					<div class="inner">
+						<header>
+							<p> <a href="https://templated.co"></a>Condoms</p>
+							<h2>No Glove No Love.</h2>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'kusaco/img/glv.jpg' %}" alt="" />
+					<div class="inner">
+						<header>
+							<p>prep</p>
+							<h2>Just PrEP it.</h2>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'kusaco/img/abs.jpg' %}"  alt="" />
+					<div class="inner">
+						<header>
+							<p>Drug abuse</p>
+							<h2>Say NO to drug abuse.</h2>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'kusaco/img/drg.jpg' %}"  alt="" />
+					<div class="inner">
+						<header>
+							<p>pep</p>
+							<h2>Consider PEP</h2>
+						</header>
+					</div>
+				</article>
+				<article>
+					<img src="{% static 'kusaco/img/gnm.jpg' %}"  alt="" />
+					<div class="inner">
+						<header>
+							<p>HIV</p>
+							<h2>The HIV Virus</h2>
+						</header>
+					</div>
+				</article>
+			</section>
+
+		<!-- One -->
+		 {% if user.is_authenticated %}
+				<h4>Hello</h4>
+				<h4>Welcome {{ user.username }}</h4>
+				<p><a href="{% url 'logout' %}">Logout</a></p>
+				{% else %}
+				<p><a href="{% url 'login' %}">Login</a></p>
+				<p><a href="{% url 'registration' %}">Register</a></p>
+				{% endif %}
+			<section id="one" class="wrapper style2">
+				<div class="inner">
+					<div class="grid-style">
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{% static 'kusaco/img/hiv.jpg' %}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>Amazing articles</p>
+										<h2>How to curb HIV/AIDS</h2>
+									</header>
+									<p> "To bring into attention,the greatest weapon on our table is Behavioural Change.This is the most loyal pathway through which we can see..."</p>
+									<footer class="align-center">
+										<a href="{% url 'articles' %}" class="button alt">Read more</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+						<div>
+							<div class="box">
+								<div class="image fit">
+									<img src="{% static 'kusaco/img/aids.jpg' %}" alt="" />
+								</div>
+								<div class="content">
+									<header class="align-center">
+										<p>Alumni testimonials</p>
+										<h2>Samwel</h2>
+									</header>
+									<p> "I joined KUSACO in 2012 and left in 2015 after my graduation that same year.I work in Nation Media Group as an executive in Newspaper in Education..."</p>
+									<footer class="align-center">
+										<a href="{% url 'testimonials' %}" class="button alt">Read More</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<h2>The Director Kenyatta university Aids Control Unit</h2>
+			<h3>Dr. Tabitha Wang'eri</h3>
+								<h4><span class="image left"><img src="{% static 'kusaco/img/director.jpeg' %}" alt="" /></span>
+
+									"Thank you for visiting the Kenyatta university Aids control webpage. Here we share our activities and programmes that may be of benefit to you. The various programmes that we undertake aim to enhance progress towards "Zero" that is ... Zero New Hiv infections, Zero Discrimination and Zero AIDs related deaths.
+								Approximately 35 million people are currently living with HIV epidermic in the world. 95% of new infections occur in individuals that reside in low-and middle income countries, particularly in sub-Saharan Africa, Kenya being one of them. HIV primarily affects those in their most productive years. The HIV prevalence among adult ages 15 to 64 decreased from 7.2 percent in 2007 to 5.6 percent in 2012. This represents approximately 1.2 million adults. This is as a result of concerted efforts by the Government of Kenya through the establishment of ACUs and other interventions and the international community which have led to the reduction in the disease burden."</h4>
+
+					</header>
+				</div>
+			</section>
+
+		<!-- Three -->
+			<section id="three" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">Pictorials</p>
+						<h2>Get the facts</h2>
+					</header>
+					<div class="gallery">
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/hiv2.jpg' %}" alt="" /></a>
+							</div>
+							<p>a) Ways in which HIV is transmitted and NOT transmitted</p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/who.jpg' %}" alt="" /></a>
+							</div>
+							<p>b) Major ways in which HIV Is transmitted.</p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/bill.jpg' %}" alt="" /></a>
+							</div>
+							<p>c) Facts about HIV </p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/sev.jpg' %}" alt="" /></a>
+							</div>
+							<p>d) Facts about HIV</p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/inv.jpg' %}" alt="" /></a>
+							</div>
+							<p>e) How the HIV virus works while in the body</p>
+						</div>
+						<div>
+							<div class="image fit">
+								<a href="#"><img src="{% static 'kusaco/img/liv.jpg' %}" alt="" /></a>
+							</div>
+							<p>f) HIV infection is actually not the end.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				Contact us on: +254717614453 | +25419366819 | +254718046786<br>kusacofamily@gmail.com
+				<div class="copyright">
+					&copy; Developed by Mudaki Wilson <br> enlightguru@gmail.com<br>+254700868636
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'kusaco/js/jquery.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/skel.min.js' %}"></script>
+			<script src="{% static 'kusaco/js/util.js' %}"></script>
+			<script src="{% static 'kusaco/js/main.js' %}"></script>
+
+	</body>
+</html>
